@@ -9,19 +9,16 @@ const socket = io.connect("http://localhost:3001")
 
 export default function App() {
 
-  const [user, setUser] = useState("")
-  console.log(user)
-
   return (
 		<BrowserRouter>
 			<Routes>
 				<Route
 					path='/'
-					element={<Join user={user} setUser={setUser} />}
+					element={<Join />}
 				/>
         <Route
           path='/chat'
-          element={<Chat user={user} />}
+          element={<Chat />}
         />
 			</Routes>
 		</BrowserRouter>

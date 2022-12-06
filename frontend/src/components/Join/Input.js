@@ -1,14 +1,20 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateUser } from '../../features/user/userSlice';
 
-export function Input({ user, setUser }) {
+export function Input() {
+
+	const { name } = useSelector(store => store.user)
+	const dispatch = useDispatch()
+
 	const handleInputChange = (event) => {
-		setUser(event.target.value);
+		dispatch(updateUser(event.target.value));
 	};
 
 	return (
 		<input
 			type='text'
-			value={user}
+			value={name}
 			onChange={handleInputChange}
 			placeholder='Enter your name'
 		/>
