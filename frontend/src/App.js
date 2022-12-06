@@ -16,10 +16,10 @@ export default function App() {
 					path='/'
 					element={<Join />}
 				/>
-        <Route
-          path='/chat'
-          element={<Chat />}
-        />
+				<Route
+				path='/chat'
+				element={<Chat />}
+				/>
 			</Routes>
 		</BrowserRouter>
   );
