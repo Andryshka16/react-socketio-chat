@@ -21,18 +21,18 @@ body {
     text-align: center;
 }
 
-.join-form {
+.user-form {
     width: 800px;
     display: flex;
     justify-content: space-around;
 }
 
-.join-form > * {
+.user-form > * {
     border-radius: 15px;
     margin: 20px;
 }
 
-.join-form > input {
+input {
     width: 350px;
     line-height: 20px;
     padding: 0 30px;
@@ -40,11 +40,11 @@ body {
     background: rgb(255, 255, 255);
 }
 
-.join-form > input:focus {
+input:focus {
     outline: none;
 }
 
-.enter-btn {
+.enter-btn, .send-message {
    height: 75px;
    width: 240px;
    font-size: 40px;
@@ -55,6 +55,35 @@ body {
    background: rgba(66, 219, 117, 0.81);
 }
 
-.enter-btn:hover {
+.enter-btn:hover, .send-message:hover {
     scale: 1.05;
+}
+
+.chat {
+    background: rgb(28, 66, 189);
+    border-radius: 20px;
+    height: 600px;
+    width: 1000px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    translate: -50% -50%
+}
+
+.message-form {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 720px;
+    bottom: 10px ;
+    left: 50%;
+    translate: -50% 0 ;
+}
+
+.message-form > input {
+    border-radius: 15px;
+    width: 400px;
+}
+.message-form > button {
+    height: 50px;
 }
