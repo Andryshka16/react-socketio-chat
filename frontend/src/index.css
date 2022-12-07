@@ -1,5 +1,6 @@
 body {
-    background: rgb(1, 10, 74);
+    --bodyColor: rgb(1, 10, 74);
+    background: var(--bodyColor);
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -60,23 +61,26 @@ input:focus {
 }
 
 .chat {
-    background: rgb(28, 66, 189);
+    --bgColor: rgb(28, 66, 189);
+    background: var(--bgColor);
     border-radius: 20px;
     height: 600px;
     width: 1000px;
     top: 50%;
     left: 50%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column-reverse;
     position: absolute;
+    padding-top: 10px;
     translate: -50% -50%
 }
 
 .message-form {
-    position: absolute;
     display: flex;
     width: fit-content;
     bottom: 10px;
-    left: 50%;
-    translate: -50% 0 ;
+    margin: 20px auto;
 }
 
 .message-form > input {
@@ -93,9 +97,15 @@ input:focus {
 
 .message {
     width: fit-content;
+    cursor: pointer;
+    max-width: 700px;
     padding: 10px 15px;
-    margin: 10px 30px;
     border-radius: 10px;
+    transition: 200ms;
+}
+
+.message:hover {
+    scale: 0.98;
 }
 
 .message > * {
@@ -110,7 +120,7 @@ input:focus {
 }
 
 .msg-text {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 500;
 }
 
@@ -125,4 +135,18 @@ input:focus {
 
 .msg-date {
     float: right;
+}
+
+.chat::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(227, 215, 215, 0.189);
+}
+
+.chat::-webkit-scrollbar {
+    width: 12px;
+}
+
+.chat::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: rgb(100, 100, 100);
 }

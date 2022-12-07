@@ -1,5 +1,5 @@
 
-export default function createMessage(user, text) {
+export default function newMessage(user, text) {
 
     const date = new Date()
 
@@ -7,6 +7,6 @@ export default function createMessage(user, text) {
 		user,
 		text,
 		date: date.toLocaleTimeString(),
-		id: date.getTime().toString() + user,
+		id: Math.random(),
 	};
 }

@@ -6,12 +6,16 @@ import Input from './Input'
 
 export default function Chat() {
 
-  const { name } = useSelector(store => store.user)
+  const { messages } = useSelector(store => store.messages)
+
+  const styles = {
+
+  }
   
   return (
       <div className='chat'>
-        <Messages />
         <Input/>
+        <Messages />
       </div>
   )
 }

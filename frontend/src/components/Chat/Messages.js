@@ -20,7 +20,8 @@ function Message({ text, user, date}) {
 
     const styles = {
 		backgroundColor: `rgba(0, 0, 0, ${isNative ? 0.3 : 0.45})`,
-		// float: `${isNative ? "right" : "left"}`,
+		margin: `10px 30px`,
+		[isNative ? 'marginLeft' : 'marginRight']: "auto",
 	};
 
     return (
