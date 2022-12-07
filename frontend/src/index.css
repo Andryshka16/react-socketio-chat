@@ -73,17 +73,56 @@ input:focus {
 .message-form {
     position: absolute;
     display: flex;
-    justify-content: space-between;
-    width: 720px;
-    bottom: 10px ;
+    width: fit-content;
+    bottom: 10px;
     left: 50%;
     translate: -50% 0 ;
 }
 
 .message-form > input {
     border-radius: 15px;
+    margin-right: 10px;
+    font-size: 25px;
     width: 400px;
 }
 .message-form > button {
-    height: 50px;
+    font-size: 30px;
+    height: 40px;
+    width: 120px;
+}
+
+.message {
+    width: fit-content;
+    padding: 10px 15px;
+    margin: 10px 30px;
+    border-radius: 10px;
+}
+
+.message > * {
+    margin: 0 10px;
+}
+
+.message > hr {
+    margin: 5px;
+    background: rgb(181, 181, 181);
+    height: 1px;
+    border: none;
+}
+
+.msg-text {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.msg-name, .msg-date {
+    display: inline;
+    color: rgb(220, 220, 220);
+}
+
+.msg-name {
+    font-weight: 400
+}
+
+.msg-date {
+    float: right;
 }

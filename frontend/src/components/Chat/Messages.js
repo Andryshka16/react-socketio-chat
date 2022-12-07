@@ -7,14 +7,29 @@ export default function Messages() {
 
     return (
         <div className='chat-box'>
-            {
-                messages.map(({ user, text }) =>
-                    <div className='message'>
-                        <h3>{ text } </h3>
-                        <p>{ user } </p>
-                    </div>
-                )
-            }
+            {messages.map(message =>
+                <Message  key={ message.id } {...message} />
+            )}
         </div>
     );
 }
+function Message({ text, user, date}) {
+
+    const { name } = useSelector(store => store.user)
+    const isNative = user === name
+
+    const styles = {
+		backgroundColor: `rgba(0, 0, 0, ${isNative ? 0.3 : 0.45})`,
+		// float: `${isNative ? "right" : "left"}`,
+	};
+
+    return (
+        <div className='message' style={styles}>
+            <h3 className='msg-text'>{text} </h3>
+            <hr/>
+			<p className='msg-name'>{user} </p>
+			<p className='msg-date'>{date} </p>
+		</div>
+	);
+}
+

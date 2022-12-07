@@ -7,6 +7,6 @@ export default function createMessage(user, text) {
 		user,
 		text,
 		date: date.toLocaleTimeString(),
-		id: date.getTime(),
+		id: date.getTime().toString() + user,
 	};
 }

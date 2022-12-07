@@ -12,14 +12,8 @@ export default function App() {
   return (
 		<BrowserRouter>
 			<Routes>
-				<Route
-					path='/'
-					element={<Join />}
-				/>
-				<Route
-				path='/chat'
-				element={<Chat />}
-				/>
+				<Route path='/' element={<Join />} />
+				<Route path='/chat' element={<Chat />} />
 			</Routes>
 		</BrowserRouter>
   );
