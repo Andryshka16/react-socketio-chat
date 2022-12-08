@@ -1,17 +1,13 @@
 import React from 'react';
-import { Button } from './Button';
-import { Input } from './Input';
+import JoinForm from './JoinForm';
 
 
-export default function Join() {
+export default function JoinPage() {
 
 	return (
 		<div className='join'>
 			<h1>Hey, join chat right now!</h1>
-			<div className='user-form'>
-				<Input />
-				<Button />
-			</div>
+			<JoinForm />
 			<h1>Happy chatting!</h1>
 		</div>
 	);
