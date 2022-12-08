@@ -1,51 +1,31 @@
-import React, { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { useSelector } from 'react-redux'
-import {createMessage} from "../../features/chat/chatSlice"
-import { socket } from '../../App'
-import newMessage from '../../features/chat/newMessage'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { useSendMessage } from './useSendMessage'
+import { updateUserText } from "../../features/user/userSlice"
+import useCallbackOnEnter from './useCallbackOnEnter';
 
 
 export default function Input() {
 
-	const dispatch = useDispatch();
-	const { name } = useSelector((store) => store.user)
-	const [value, setValue] = useState('')
+	const dispatch = useDispatch()
+	const sendMessage = useSendMessage()
+	const { text } = useSelector(store => store.user)
 
-	const sendMessage = () => {
-		
-		if (!value.trim()) {
-			setValue("")
-			return
-		}
-		
-		const message = newMessage(name, value)
-		dispatch(createMessage(message))
-		socket.emit('sendMessage', message)
-
-		setValue("")
-	
-	}
+	const [bindEnter, unBindEnter] = useCallbackOnEnter(sendMessage)
 
 	useEffect(() => {
-
-		const eventListener = (event) => {
-			event.key === 'Enter' && sendMessage()
-		};
-
-		window.addEventListener('keypress', eventListener)
-		return () => window.removeEventListener("keypress", eventListener)
-
-	}, [value]);
+		bindEnter()
+		return unBindEnter
+	}, [text]);
 	
 	return (
 		<div className='message-form'>
 
 			<input
-				type='text' value={value}
-				onChange={(event) => {
-					setValue(event.target.value);
-				}}
+				type='text' value={text}
+				onChange={event => 
+					dispatch(updateUserText(event.target.value))
+				}
 				className='message-input'
 				placeholder='Your text here'
 			/>

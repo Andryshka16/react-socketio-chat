@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+// import newMessage from './newMessage';
+
 // const initialState = [
 // 	newMessage('Andrey', 'Hello, world!'),
 // 	newMessage('Maksim', 'You watsup guys'),
@@ -19,7 +21,7 @@ const messagesSlice = createSlice({
         createMessage: (state, { payload }) => {
 			state.push(payload);
 		},
-		joinUser: (state, payload) => { 
+		joinUser: (state, { payload }) => { 
 			state.push(payload)
 		}
 	},

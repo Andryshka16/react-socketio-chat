@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUser } from '../../features/user/userSlice';
+import useCallbackOnEnter from '../Chat/useCallbackOnEnter';
 import useJoinChat from './useJoinChat';
 
 export default function JoinForm() {
@@ -8,18 +9,17 @@ export default function JoinForm() {
 	const { name } = useSelector(store => store.user)
 	const dispatch = useDispatch()
 	const joinChat = useJoinChat()
+	
+	const [bindEnter, unBindEnter] = useCallbackOnEnter(joinChat)
 
 	const handleInputChange = (event) => {
 		dispatch(updateUser(event.target.value));
 	};
 
 	useEffect(() => {
-		const eventListener = event =>
-			event.key === "Enter" && joinChat()
-		
-		window.addEventListener("keypress", eventListener)
-		return () => window.removeEventListener("keypress", eventListener)
-	}, [])
+		bindEnter()
+		return unBindEnter
+	}, [name])
 
 	return <div className='user-form'>
 		<input

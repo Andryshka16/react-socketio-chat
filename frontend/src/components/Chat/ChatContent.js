@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Message } from './Message';
 import { socket } from '../../App';
 import { createMessage } from '../../features/chat/chatSlice';
+import { UserJoined } from './UserJoined';
 
 
 export default function ChatContent() {
@@ -20,8 +21,14 @@ export default function ChatContent() {
 
 	return (
 		<div className='chat-box'>
-			{messages.map((message) => (
-				<Message key={message.id} {...message} />
+            {messages.map((element) => (
+                element.type === "message" ?
+                    <Message
+                        key={element.id}
+                        {...element} /> :
+                    <UserJoined
+                        key={element.id}
+                        {...element} />
 			))}
 		</div>
 	);
