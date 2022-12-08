@@ -1,10 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import useJoinChat from './useJoinChat';
 
 export function Button() {
+
+	const joinChat = useJoinChat()
+
 	return (
-		<NavLink to='/chat'>
-			<button className='enter-btn'>Enter</button>
-		</NavLink>
+		<button
+			className='enter-btn'
+			onClick={joinChat}>
+			Enter
+		</button>
 	);
 }

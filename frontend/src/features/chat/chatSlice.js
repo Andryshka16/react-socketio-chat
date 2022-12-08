@@ -19,9 +19,12 @@ const messagesSlice = createSlice({
         createMessage: (state, { payload }) => {
 			state.push(payload);
 		},
+		joinUser: (state, payload) => { 
+			state.push(payload)
+		}
 	},
 });
 
 export default messagesSlice.reducer;
 
-export const {createMessage} = messagesSlice.actions 
+export const {createMessage, joinUser} = messagesSlice.actions 

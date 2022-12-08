@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Message } from './Message';
 import { socket } from '../../App';
-import { createMessage } from '../../features/messages/messagesSlice';
+import { createMessage } from '../../features/chat/chatSlice';
 
 
-export default function Messages() {
+export default function ChatContent() {
 
     const dispatch = useDispatch()
 

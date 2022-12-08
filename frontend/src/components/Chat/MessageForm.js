@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
-import {createMessage} from "../../features/messages/messagesSlice"
+import {createMessage} from "../../features/chat/chatSlice"
 import { socket } from '../../App'
-import newMessage from '../../features/messages/newMessage'
+import newMessage from '../../features/chat/newMessage'
 
 
 export default function Input() {

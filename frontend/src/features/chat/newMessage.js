@@ -3,7 +3,8 @@ export default function newMessage(user, text) {
 
     const date = new Date()
 
-    return {
+	return {
+		type: "message",
 		user,
 		text,
 		date: date.toLocaleTimeString(),
