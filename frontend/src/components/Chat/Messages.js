@@ -1,36 +1,28 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Message } from './Message';
+import { socket } from '../../App';
+import { createMessage } from '../../features/messages/messagesSlice';
+
 
 export default function Messages() {
-	
-    const messages = useSelector(store => store.messages)
 
-    return (
-        <div className='chat-box'>
-            {messages.map(message =>
-                <Message  key={ message.id } {...message} />
-            )}
-        </div>
-    );
-}
-function Message({ text, user, date}) {
+    const dispatch = useDispatch()
 
-    const { name } = useSelector(store => store.user)
-    const isNative = user === name
+    const messages = useSelector((store) => store.messages);
 
-    const styles = {
-		backgroundColor: `rgba(0, 0, 0, ${isNative ? 0.3 : 0.45})`,
-		margin: `10px 30px`,
-		[isNative ? 'marginLeft' : 'marginRight']: "auto",
-	};
+    useEffect(() => {
+        socket.on("getMessage", (message) => { 
+            dispatch(createMessage(message))
+    })
+     }, [socket])
 
-    return (
-        <div className='message' style={styles}>
-            <h3 className='msg-text'>{text} </h3>
-            <hr/>
-			<p className='msg-name'>{user} </p>
-			<p className='msg-date'>{date} </p>
+
+	return (
+		<div className='chat-box'>
+			{messages.map((message) => (
+				<Message key={message.id} {...message} />
+			))}
 		</div>
 	);
 }
-

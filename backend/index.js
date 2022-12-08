@@ -19,11 +19,9 @@ const io = new Server(server, {
 
 io.on("connection", socket => { 
     
-    socket.on("handleMessage", (message) => { 
-        socket.broadcast.emit("getMessage", message);
-        socket.emit("getMessage", message);
+    socket.on("sendMessage", message => { 
+        socket.broadcast.emit("getMessage", message)
     })
 })
-
 
 server.listen(3001, () => console.log("Server started!"))
