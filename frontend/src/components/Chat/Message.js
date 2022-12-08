@@ -10,7 +10,6 @@ export function Message({ text, user, date }) {
 
 	const { name } = useSelector((store) => store.user);
 	const isNative = user === name;
-
 	const styles = {
 		backgroundColor: `rgba(0, 0, 0, ${isNative ? 0.3 : 0.45})`,
 		margin: `10px 30px`,
