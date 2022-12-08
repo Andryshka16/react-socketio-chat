@@ -149,11 +149,18 @@ input:focus {
     padding: 5px 10px;
     border-radius: 10px;
     margin: auto;
+    transition: 200ms;
 }
+
 
 .user-joined > h3 {
     font-weight: 200;
     margin: 0;
+}
+
+.user-joined.hidden {
+    opacity: 0;
+    translate: 15px;
 }
 
 .chat::-webkit-scrollbar-track {

@@ -9,12 +9,12 @@ export function useSendMessage() {
 
 	const dispatch = useDispatch();
 	const { name, text } = useSelector((store) => store.user);
+	const message = newMessage(name, text);
 
 	if (!text.trim())
 		return () => { };
 
 	return () => {
-		const message = newMessage(name, text);
 		socket.emit('sendMessage', message);
 		dispatch(createMessage(message));
 		dispatch(updateUserText(""))

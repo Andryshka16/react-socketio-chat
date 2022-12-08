@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useSendMessage } from './useSendMessage'
+import { useSendMessage } from '../hooks/useSendMessage'
 import { updateUserText } from "../../features/user/userSlice"
-import useCallbackOnEnter from './useCallbackOnEnter';
+import useCallbackOnEnter from '../hooks/useCallbackOnEnter';
 
 
 export default function Input() {
 
 	const dispatch = useDispatch()
 	const sendMessage = useSendMessage()
+
 	const { text } = useSelector(store => store.user)
 
 	const [bindEnter, unBindEnter] = useCallbackOnEnter(sendMessage)

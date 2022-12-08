@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Message } from './Message';
 import { socket } from '../../App';
 import { createMessage } from '../../features/chat/chatSlice';
-import { UserJoined } from './UserJoined';
+import JoinAlert from './JoinAlert';
 
 
 export default function ChatContent() {
@@ -26,7 +26,7 @@ export default function ChatContent() {
                     <Message
                         key={element.id}
                         {...element} /> :
-                    <UserJoined
+                    <JoinAlert
                         key={element.id}
                         {...element} />
 			))}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { ChatPage, JoinPage } from "./components"
+import { Chat, Join } from "./components"
 import "./index.css"
 
 import io from "socket.io-client"
@@ -12,8 +12,8 @@ export default function App() {
   return (
 		<BrowserRouter>
 			<Routes>
-				<Route path='/' element={<JoinPage />} />
-				<Route path='/chat' element={<ChatPage />} />
+				<Route path='/' element={<Join />} />
+				<Route path='/chat' element={<Chat />} />
 			</Routes>
 		</BrowserRouter>
   );
