@@ -1,7 +1,13 @@
 import React from 'react'
+import { UserCounter } from './UserCounter'
+
 
 export default function Navigation() {
+
   return (
-    <div>Navigation</div>
+    <nav>
+      <h1>Lapchat</h1>
+      <UserCounter/>
+    </nav>
   )
 }

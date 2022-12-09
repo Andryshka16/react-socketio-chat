@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { createMessage } from "../features/chat/chatSlice";
+import { createNotification } from "../features/chat/chatSlice";
 import { socket } from '../App';
 import newMessage from '../features/chat/newMessage';
 import { updateUserText } from '../features/user/userSlice';
@@ -16,7 +16,7 @@ export default function useSendMessage() {
 
 	return () => {
 		socket.emit('sendMessage', message);
-		dispatch(createMessage(message));
+		dispatch(createNotification(message));
 		dispatch(updateUserText(""))
 	};
 }

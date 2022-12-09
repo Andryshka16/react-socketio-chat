@@ -16,9 +16,19 @@ const io = new Server(server, {
 	},
 });
 
+let connected = 0
 
 io.on("connection", socket => { 
-    
+
+	connected += 1
+	
+	socket.on("disconnect", () => { 
+		connected -= 1
+	})
+
+	socket.emit("userConnected", connected)
+	socket.broadcast.emit("userConnected", connected)
+
     socket.on("sendMessage", message => { 
         socket.broadcast.emit("getMessage", message)
     })

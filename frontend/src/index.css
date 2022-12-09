@@ -1,7 +1,9 @@
 body {
     --bodyColor: rgb(1, 10, 74);
+    --elementColor: rgb(28, 66, 189);
     background: var(--bodyColor);
     color: white;
+    margin: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -61,20 +63,17 @@ input:focus {
 }
 
 .chat {
-    --bgColor: rgb(28, 66, 189);
-    background: var(--bgColor);
+    background: var(--elementColor);
     border-radius: 20px;
-    height: 600px;
+    height: 550px;
     width: 1000px;
-    top: 50%;
-    left: 50%;
+    margin: 40px auto;
+    padding-top: 10px;
+    top: calc(50% + 20px);
     overflow-y: scroll;
     overflow-x: hidden;
     display: flex;
     flex-direction: column-reverse;
-    position: absolute;
-    padding-top: 10px;
-    translate: -50% -50%
 }
 
 .message-form {
@@ -175,4 +174,12 @@ input:focus {
     border-radius: 10px;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     background-color: rgb(100, 100, 100);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px;
+    background: var(--elementColor);
 }

@@ -18,15 +18,12 @@ const messagesSlice = createSlice({
 	name: 'messages',
 	initialState,
 	reducers: {
-        createMessage: (state, { payload }) => {
+        createNotification: (state, { payload }) => {
 			state.push(payload);
-		},
-		joinUser: (state, { payload }) => { 
-			state.push(payload)
 		}
 	},
 });
 
 export default messagesSlice.reducer;
 
-export const {createMessage, joinUser} = messagesSlice.actions 
+export const {createNotification} = messagesSlice.actions 

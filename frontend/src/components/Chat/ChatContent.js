@@ -2,9 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Message } from './Message';
 import { socket } from '../../App';
-import { createMessage } from '../../features/chat/chatSlice';
+import { createNotification } from '../../features/chat/chatSlice';
 import JoinAlert from './JoinAlert';
-
 
 export default function ChatContent() {
 
@@ -14,7 +13,8 @@ export default function ChatContent() {
 
     useEffect(() => {
         socket.on("getMessage", (message) => { 
-            dispatch(createMessage(message))
+            dispatch(createNotification(message))
+
     })
      }, [socket])
 
