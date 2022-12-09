@@ -1,6 +1,7 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { Chat, Join, Navigation } from "./components"
+import { Chat, Join, Navigation, Footer } from "./components"
+
 import io from "socket.io-client"
 import "./index.css"
 
@@ -15,6 +16,7 @@ export default function App() {
 				<Route path='/' element={<Join />} />
 				<Route path='/chat' element={<Chat />} />
 			</Routes>
+		<Footer/>
 		</BrowserRouter>
   );
 }

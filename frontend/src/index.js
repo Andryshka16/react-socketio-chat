@@ -16,6 +16,7 @@ const store = configureStore({
 		onlineUsers: onlineUsersReducer,
 	},
 });
+
 root.render(
     <Provider store = { store }>
         <App />

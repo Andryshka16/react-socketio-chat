@@ -183,3 +183,34 @@ nav {
     padding: 0 70px;
     background: var(--elementColor);
 }
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--elementColor);
+}
+
+.title {
+    color: white;
+    text-decoration: none;
+}
+
+.users-online {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts-icon {
+    width: 30px;
+    margin: 5px 10px;
+    transition: 200ms;
+}
+
+.contacts-icon:hover {
+    scale: 1.1;
+}
