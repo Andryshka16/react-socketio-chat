@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUser } from '../../features/user/userSlice';
-import useCallbackOnEnter from '../hooks/useCallbackOnEnter';
+import useCallbackOnEnter from '../../hooks/useCallbackOnEnter';
 import useJoinChat from '../../hooks/useJoinChat'
 
 export default function JoinForm() {

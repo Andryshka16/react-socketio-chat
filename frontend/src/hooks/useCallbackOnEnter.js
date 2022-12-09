@@ -1,7 +1,7 @@
-export default function useCallbackOnEnter(callback) {
+export default function useCallbackOnEnter(func) {
 
 	const eventListener = event =>
-		event.key === 'Enter' && callback();
+		event.key === 'Enter' && func();
 
 	return [
 		() => window.addEventListener('keypress', eventListener),

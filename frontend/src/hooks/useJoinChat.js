@@ -5,8 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import { socket } from '../App';
 import { increase } from '../features/totalUsers/totalUsers';
 
-
-
 export default function useJoinChat() { 
 
     const dispatch = useDispatch()

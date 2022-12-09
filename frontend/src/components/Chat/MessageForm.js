@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useSendMessage } from '../hooks/useSendMessage'
 import { updateUserText } from "../../features/user/userSlice"
-import useCallbackOnEnter from '../hooks/useCallbackOnEnter';
+
+import useSendMessage  from '../../hooks/useSendMessage'
+import useCallbackOnEnter from '../../hooks/useCallbackOnEnter';
 
 
 export default function Input() {
