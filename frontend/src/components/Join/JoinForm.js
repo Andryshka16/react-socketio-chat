@@ -1,31 +1,24 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { updateUser } from '../../features/user/userSlice';
+import React, { useEffect, useState } from 'react';
+
 import useCallbackOnEnter from '../../hooks/useCallbackOnEnter';
 import useJoinChat from '../../hooks/useJoinChat'
 
 export default function JoinForm() {
 
-	const { name } = useSelector(store => store.user)
-	const dispatch = useDispatch()
-	const joinChat = useJoinChat()
-	
+	const [value, setValue] = useState("")
+	const joinChat = useJoinChat(value)
 	const [bindEnter, unBindEnter] = useCallbackOnEnter(joinChat)
-
-	const handleInputChange = (event) => {
-		dispatch(updateUser(event.target.value));
-	};
 
 	useEffect(() => {
 		bindEnter()
 		return unBindEnter
-	}, [name])
+	}, [value])
 
 	return <div className='user-form'>
 		<input
 			type='text'
-			value={name}
-			onChange={handleInputChange}
+			value={value}
+			onChange={event=>setValue(event.target.value)}
 			placeholder='Enter your name'
 		/>
 		<button

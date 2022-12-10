@@ -11,7 +11,7 @@ export default function useSendMessage() {
 	const { name, text } = useSelector((store) => store.user);
 	const message = newMessage(name, text);
 
-	if (!text.trim())
+	if (!text.trim() || !name)
 		return () => { };
 
 	return () => {

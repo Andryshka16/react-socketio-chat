@@ -6,7 +6,7 @@ export function Message({ text, user, date }) {
 
 	useEffect(() => {
 		setTimeout(() => setShown(true), 200);
-	}, []);
+	}, [])
 
 	const { name } = useSelector((store) => store.user);
 	const isNative = user === name;
