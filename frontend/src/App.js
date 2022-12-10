@@ -11,12 +11,12 @@ export default function App() {
 
   return (
 		<BrowserRouter>
-		<Navigation/>
+			<Navigation/>
 			<Routes>
 				<Route path='/' element={<Join />} />
 				<Route path='/chat' element={<Chat />} />
 			</Routes>
-		<Footer/>
+			<Footer/>
 		</BrowserRouter>
   );
 }

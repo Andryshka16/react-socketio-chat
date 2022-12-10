@@ -64,12 +64,15 @@ input:focus {
 
 .chat {
     background: var(--elementColor);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
     border-radius: 20px;
-    height: 550px;
-    width: 1000px;
+    height: 70vh;
+    width: 60%;
     margin: 40px auto;
     padding-top: 10px;
-    top: calc(50% + 20px);
     overflow-y: scroll;
     overflow-x: hidden;
     display: flex;
@@ -213,4 +216,9 @@ footer {
 
 .contacts-icon:hover {
     scale: 1.1;
+}
+
+.copyright {
+    position: absolute;
+    right: 50px;
 }
