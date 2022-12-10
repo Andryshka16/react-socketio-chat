@@ -1,0 +1,125 @@
+.chat {
+    background: var(--elementColor);
+    position: absolute;
+    top: calc(50% + 10px);
+    left: 50%;
+    translate: -50% -50%;
+    border-radius: 20px;
+    height: 75vh;
+    width: 65%;
+    padding-top: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.message-form {
+    display: flex;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.message-form>input {
+    border-radius: 15px;
+    margin-right: 10px;
+    font-size: 25px;
+    width: 400px;
+}
+
+.message-form>button {
+    font-size: 30px;
+    height: 40px;
+    width: 120px;
+}
+
+.message {
+    width: fit-content;
+    cursor: pointer;
+    max-width: 700px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: 200ms;
+}
+
+.message.hidden {
+    opacity: 0;
+    translate: 20%;
+}
+
+.message:hover {
+    scale: 0.98;
+}
+
+.message>* {
+    margin: 0 10px;
+}
+
+.message>hr {
+    margin: 5px;
+    background: rgb(181, 181, 181);
+    height: 1px;
+    border: none;
+}
+
+.msg-text {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.msg-name,
+.msg-date {
+    display: inline;
+    color: rgb(220, 220, 220);
+}
+
+.msg-name {
+    font-weight: 400
+}
+
+.msg-date {
+    float: right;
+}
+
+.user-joined {
+    background: rgb(0, 9, 81);
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: auto;
+    transition: 200ms;
+}
+
+
+.user-joined>h3 {
+    font-weight: 200;
+    margin: 0;
+}
+
+.user-joined.hidden {
+    opacity: 0;
+    translate: 15px;
+}
+
+.login-alert {
+    background: rgba(217, 52, 52, 0.526);
+    width: fit-content;
+    font-size: 20px;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 5px 20px;
+}
+
+.chat::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(227, 215, 215, 0.189);
+}
+
+.chat::-webkit-scrollbar {
+    width: 12px;
+}
+
+.chat::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: rgb(100, 100, 100);
+}

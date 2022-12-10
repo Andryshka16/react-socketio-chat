@@ -1,8 +1,11 @@
+
 import { createSlice } from "@reduxjs/toolkit"
+import randomAvatar from '../../assets/avatars'
 
 const initialState = {
     name: "",
-    text: ""
+    text: "",
+    avatar: randomAvatar()
 }
 
 const userSlice = createSlice({ 

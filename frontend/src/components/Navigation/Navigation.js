@@ -1,6 +1,6 @@
 import React from 'react'
-import { UserCounter } from './UserCounter'
 import { NavLink } from 'react-router-dom'
+import { Authorization } from './Authorization'
 
 export default function Navigation() {
 
@@ -10,7 +10,7 @@ export default function Navigation() {
         <h1>Lapchat</h1>
       </NavLink>
       
-      <UserCounter/>
+      <Authorization/>
     </nav>
   )
 }

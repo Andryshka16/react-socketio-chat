@@ -15,10 +15,10 @@ export function UserCounter() {
     );
   }, [socket]);
 
-  return <div className='users-online'>
-
-    <h2>{ count } online</h2>
-      
-  </div>
+  return (
+    <div className='users-online'>
+      { count } online
+    </div>
+  )
   
 }

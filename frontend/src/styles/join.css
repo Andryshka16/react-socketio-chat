@@ -1,0 +1,43 @@
+.join {
+    width: 800px;
+    height: fit-content;
+    background: rgb(28, 66, 189);
+    position: absolute;
+    top: calc(50% + 12px);
+    left: 50%;
+    translate: -50% -50%;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.join > h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.user-form {
+    display: flex;
+    justify-content: space-around;
+}
+
+.user-form > * {
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.enter-btn,
+.send-message {
+    height: 75px;
+    width: 240px;
+    font-size: 40px;
+    border-radius: 15px;
+    font-weight: 700;
+    color: white;
+    transition: 200ms;
+    background: var(--greenBtnColor);
+}
+
+.enter-btn:hover,
+.send-message:hover {
+    scale: 1.05;
+}
