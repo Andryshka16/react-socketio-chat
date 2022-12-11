@@ -1,35 +1,27 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Message } from './Message';
-import { socket } from '../../App';
-import { createNotification } from '../../features/chat/chatSlice';
 import JoinAlert from './JoinAlert';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 
 export default function ChatContent() {
 
-    const dispatch = useDispatch()
-
-    const messages = useSelector((store) => store.messages);
-
-    useEffect(() => {
-        socket.on("getMessage", (message) => { 
-            dispatch(createNotification(message))
-
-    })
-     }, [socket])
-
+    const {messages} = useSelector(store => store);
 
 	return (
-		<div className='chat-box'>
-            {messages.map((element) => (
-                element.type === "message" ?
-                    <Message
-                        key={element.id}
-                        {...element} /> :
-                    <JoinAlert
-                        key={element.id}
-                        {...element} />
-			))}
-		</div>
+		<TransitionGroup>
+            {messages.map(element =>
+                <CSSTransition
+                    timeout={200}
+                    classNames={'chat-content'}
+                >
+                    <>
+                        {element.type === "message" && <Message {...element} />}
+                        {element.type === "user" && <JoinAlert {...element} />}
+                    </>
+                </CSSTransition>
+            )}
+		</TransitionGroup>
 	);
 }

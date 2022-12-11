@@ -1,16 +1,24 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Chat, Join, Navigation, Footer } from "./components"
+import { createNotification } from './features/chat/chatSlice'
+import {useDispatch} from "react-redux"
 
 import io from "socket.io-client"
 import "./index.css"
-
 
 export const socket = io.connect("http://localhost:3001")
 
 export default function App() {
 
-  return (
+	const dispatch = useDispatch()
+
+	useEffect(() => {
+		socket.on("getMessage", msg =>
+			dispatch(createNotification(msg))
+	)}, [socket])
+
+	return (
 		<BrowserRouter>
 			<Navigation/>
 			<Routes>
@@ -19,5 +27,5 @@ export default function App() {
 			</Routes>
 			<Footer/>
 		</BrowserRouter>
-  );
+	)
 }

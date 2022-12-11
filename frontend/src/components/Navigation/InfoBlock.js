@@ -8,5 +8,5 @@ export function InfoBlock() {
   return <>
     <img src={avatar} width={35} />
     <h1>{name}</h1>
-  </>;
+  </>
 }
