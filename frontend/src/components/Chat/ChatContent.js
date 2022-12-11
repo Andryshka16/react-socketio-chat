@@ -15,6 +15,7 @@ export default function ChatContent() {
                 <CSSTransition
                     timeout={200}
                     classNames={'chat-content'}
+                    key={element.id}
                 >
                     <>
                         {element.type === "message" && <Message {...element} />}

@@ -17,7 +17,9 @@ export default function Socials() {
 
   return (
     <div className='contacts'>
-      {contacts.map((contact) => <Contact {...contact} key={contact.source} />)}
+      {contacts.map((contact) =>
+        <Contact {...contact} key={contact.source} />
+      )}
     </div>
   );
 }

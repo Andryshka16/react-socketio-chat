@@ -1,8 +1,9 @@
 export default function newUser(name) { 
+    const date = new Date()
     return {
         type: "user",
         name,
-        date: new Date().toLocaleTimeString(),
-        id: Math.random()
+        date: date.toLocaleTimeString(),
+        id: Math.random() + date.getTime()
     }
 }
