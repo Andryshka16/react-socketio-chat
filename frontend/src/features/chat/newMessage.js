@@ -1,14 +1,9 @@
-
-export default function newMessage(user, text, avatar) {
-
-    const date = new Date()
-
+export default function newMessage(text, author) {
 	return {
 		type: "message",
-		user,
 		text,
-		avatar,
-		date: date.toLocaleTimeString(),
+		author,
+		date: new Date().toLocaleTimeString(),
 		id: Math.random(),
 	};
 }

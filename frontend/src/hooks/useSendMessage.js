@@ -8,10 +8,10 @@ import { updateUserText } from '../features/user/userSlice';
 export default function useSendMessage() {
 
 	const dispatch = useDispatch();
-	const { name, text, avatar } = useSelector((store) => store.user);
-	const message = newMessage(name, text, avatar);
+	const { user } = useSelector((store) => store);
+	const message = newMessage(user.text, user);
 
-	if (!text.trim())
+	if (!user.text.trim())
 		return () => { };
 
 	return () => {

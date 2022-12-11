@@ -19,7 +19,7 @@ const io = new Server(server, {
 let connected = 0
 
 io.on("connection", socket => { 
-	console.log("smth changed")
+
 	connected += 1
 	
 	socket.on("disconnect", () => {

@@ -5,6 +5,7 @@ import randomAvatar from '../../assets/avatars'
 const initialState = {
     name: "",
     text: "",
+    id: Math.random(),
     avatar: randomAvatar()
 }
 

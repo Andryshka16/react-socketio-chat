@@ -1,10 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-export function Message({ text, user, date, avatar, id }) {
+export function Message({ text, author, date }) {
 
-	const { name } = useSelector((store) => store.user);
-	const isNative = user === name;
+	const { user } = useSelector((store) => store)
+	const isNative = author.id === user.id
+
 	const styles = {
 		backgroundColor: `rgba(0, 0, 0, ${isNative ? 0.3 : 0.45})`,
 		[isNative ? 'marginLeft' : 'marginRight']: 'auto',
@@ -19,8 +20,8 @@ export function Message({ text, user, date, avatar, id }) {
 			<hr />
 			<div className='message-info'>
 				<div className='message-author'>
-					<img src={avatar} alt="" width={25} />
-					<p>{user} </p>
+					<img src={author.avatar} alt="" width={25} />
+					<p>{author.name} </p>
 				</div>
 				<p className='msg-date'>{date.slice(0, -3)} </p>
 			</div>
