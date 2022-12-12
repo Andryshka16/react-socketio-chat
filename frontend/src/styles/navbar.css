@@ -9,7 +9,13 @@ nav {
 .title {
     color: white;
     text-decoration: none;
+    transition: 200ms;
 }
+
+.title:hover{
+    scale: 1.05;
+}
+
 
 .login-btn {
     position: absolute;
@@ -19,7 +25,7 @@ nav {
     height: 38px;
     width: 120px;
     font-size: 25px;
-    font-weight: 800;
+    font-weight: 700;
     text-align: center;
     cursor: pointer;
     background: var(--greenBtnColor);
