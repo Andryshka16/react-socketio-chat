@@ -1,0 +1,29 @@
+
+.alert-container {
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    translate: -50%;
+    background: rgb(255, 0, 0);
+    height: 50px;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: 200ms;
+}
+
+.alert-container > h2 {
+    margin: 0;
+}
+
+.alert-container.hidden {
+    opacity: 0;
+    top: 30px
+}
+
+.alert-container.visible {
+    opacity: 0;
+    top: 40px;
+}

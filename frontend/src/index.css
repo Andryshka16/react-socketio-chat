@@ -2,6 +2,7 @@
 @import "./styles/navbar.css";
 @import "./styles/footer.css";
 @import "./styles/join.css";
+@import "./styles/alert.css";
 
 body {
     --bodyColor: rgb(1, 10, 74);

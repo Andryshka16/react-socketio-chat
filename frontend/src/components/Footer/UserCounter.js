@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { add } from '../../features/onlineUsers/onlineUsers';
+import { add } from '../../features/onlineUsers/onlineUsersSlice';
 import { useDispatch } from 'react-redux';
 import { socket } from '../../App';
 
