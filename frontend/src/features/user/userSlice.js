@@ -15,6 +15,7 @@ const userSlice = createSlice({
     reducers: {
         updateUserName: (state, { payload }) => { 
             state.name = payload
+            state.avatar = randomAvatar()
         },
         updateUserText: (state, { payload }) => { 
             state.text = payload
