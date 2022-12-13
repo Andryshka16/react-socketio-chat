@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux"
 import io from "socket.io-client"
 import "./index.css"
 
-export const socket = io.connect("http://localhost:3001")
+export const socket = io.connect("https://lapchat-server.onrender.com/")
 
 
 export default function App() {

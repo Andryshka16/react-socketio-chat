@@ -4,11 +4,14 @@ import cors from "cors"
 import { createServer} from "http"
 import { Server } from "socket.io"
 
+const PORT = process.env.PORT || 4000
+
 const app = express()
+
 app.use(cors())
+app.use("/", (req, res)=>res.send(`Server is running on port ${PORT}`))
 
 const server = createServer(app)
-const PORT = process.env.PORT || 4000
 
 const io = new Server(server, {
 	cors: {
