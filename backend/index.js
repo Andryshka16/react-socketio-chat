@@ -9,7 +9,8 @@ const PORT = process.env.PORT || 4000
 const app = express()
 
 app.use(cors())
-app.use("/", (req, res)=>res.send(`Server is running on port ${PORT}`))
+app.use("/", (_, res) => res.send(`Server is running on port ${PORT}`))
+app.all('*', (_, res) => res.redirect(`/`))
 
 const server = createServer(app)
 
