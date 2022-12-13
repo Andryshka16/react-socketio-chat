@@ -8,6 +8,7 @@ const app = express()
 app.use(cors())
 
 const server = createServer(app)
+const PORT = process.env.PORT || 4000
 
 const io = new Server(server, {
 	cors: {
@@ -34,4 +35,4 @@ io.on("connection", socket => {
     })
 })
 
-server.listen(3001, () => console.log("Server started!"))
+server.listen(PORT, () => console.log("Server started!"))
